@@ -1,1 +1,20 @@
-index
+<h1>用户</h1>
+
+<table>
+  <tr>
+    <td>序号</td>
+    <td>用户名</td>
+    <td>年龄</td>
+    <td>电话</td>
+    <td>状态</td>
+  </tr>
+  <% @users.each_with_index do |user, index| %>
+    <tr>
+      <td><%= index + 1 %></td>
+      <td><%= user.name %></td>
+      <td><%= user.age %></td>
+      <td><%= user.phone %></td>
+      <td><%= User::STATUS[user.status] %></td>
+    </tr>
+  <% end %>
+</table>
