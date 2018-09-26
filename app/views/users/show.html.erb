@@ -1,0 +1,18 @@
+<h2>用户详情</h2>
+
+<table>
+  <tr>
+    <td>用户名:</td>
+    <td><%= @user.name %></td>
+  </tr>
+  <tr>
+    <td>年龄</td>
+    <td>电话</td>
+    <td>状态</td>
+  </tr>
+    <tr>
+      <td><%= @user.age %></td>
+      <td><%= @user.phone %></td>
+      <td><%= User::STATUS[@user.status] %></td>
+    </tr>
+  </table>
