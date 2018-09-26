@@ -1,4 +1,4 @@
 class User < ApplicationRecord
 
-  STATUS = {"user" =>"使用", "no_user" => "不使用"}.freeze
+  STATUS = {"use" =>"使用", "no_use" => "不使用"}.freeze
 end

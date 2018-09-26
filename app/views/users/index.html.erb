@@ -17,7 +17,9 @@
       <td><%= User::STATUS[user.status] %></td>
       <td><%= link_to '查看', user %> | </td>
       <td><%= link_to '删除', user, method: :delete %> | </td>
-
     </tr>
   <% end %>
+  <tr>
+    <td><%= link_to '增加用户', new_user_path %></td>
+  </tr>
 </table>
