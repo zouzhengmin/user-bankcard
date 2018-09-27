@@ -18,8 +18,11 @@
       <td><%= link_to '修改', edit_bank_card_path(:id=>card.id) %> | </td>
       <td><%= link_to '删除', card, method: :delete %></td>
     </tr>
-  <% end %>
-  <tr>
-    <td><%= link_to '增加银行卡', new_bank_card_path %></td>
-  </tr>
+    <% end %>
+    <tr>
+      <td><%= link_to '增加银行卡', new_bank_card_path %></td>
+      <td><%= link_to '用户主页', users_path %></td>
+    </tr>
+
+
 </table>

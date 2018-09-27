@@ -1,8 +1,10 @@
 class BankCardsController < ApplicationController
 
   before_action :find_bank_card, only: [:show, :edit, :update, :destroy]
+
   def index
     @bank_cards = BankCard.includes(:user)
+    @users = User.all
   end
 
   def show
@@ -27,7 +29,7 @@ class BankCardsController < ApplicationController
   end
 
   def destroy
-    bank_card.delete
+    @bank_card.delete
     redirect_to bank_cards_path
   end
 

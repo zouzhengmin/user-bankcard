@@ -14,5 +14,23 @@
       <td><%= @user.age %></td>
       <td><%= @user.phone %></td>
       <td><%= User::STATUS[@user.status] %></td>
+      <td><%= link_to '添加银行卡', new_bank_card_path(:id) %></td>
     </tr>
   </table>
+<hr>
+<table>
+  <tr>
+    <td>序号</td>
+    <td>卡号</td>
+    <td>银行名称</td>
+    <td>银行卡状态</td>
+  </tr>
+  <% @user.bank_cards.each_with_index do |card,index| %>
+  <tr>
+    <td><%= index + 1 %></td>
+    <td><%= card.number %></td>
+    <td><%= card.bank_name %></td>
+    <td><%= BankCard::STATUS[card.status] %></td>
+  </tr>
+  <% end %>
+</table>
