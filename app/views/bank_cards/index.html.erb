@@ -16,7 +16,7 @@
       <td><%= BankCard::STATUS[card.status] %></td>
       <td><%= link_to '查看', bank_card_path(:id=>card.id) %> | </td>
       <td><%= link_to '修改', edit_bank_card_path(:id=>card.id) %> | </td>
-      <td><%= link_to '删除', card, method: :delete %> | </td>
+      <td><%= link_to '删除', card, method: :delete %></td>
     </tr>
   <% end %>
   <tr>

@@ -1,0 +1,9 @@
+<h2>修改银行卡</h2>
+
+<%= form_for @bank_card do |f| %>
+用户： <%= f.select :user_id, User.pluck(:name, :id) %><br>
+卡号： <%= f.text_field :number %><br>
+银行名称： <%= f.select :bank_name, BankCard::BANKNAME %><br>
+状态：<%= f.select :status, BankCard::STATUS.invert %><br>
+<%= f.submit "修改" %>
+<% end %>
