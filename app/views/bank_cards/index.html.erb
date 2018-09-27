@@ -1,0 +1,25 @@
+<h2>银行卡#index</h2>
+<table>
+  <tr>
+    <td>序号</td>
+    <td>卡号</td>
+    <td>银行名称</td>
+    <td>用户名称</td>
+    <td>状态</td>
+  </tr>
+  <% @bank_cards.each_with_index do |card, index| %>
+    <tr>
+      <td><%= index + 1 %></td>
+      <td><%= card.number %></td>
+      <td><%= card.bank_name %></td>
+      <td><%= card.user.name %></td>
+      <td><%= BankCard::STATUS[card.status] %></td>
+      <td><%= link_to '查看', bank_card_path(:id=>card.id) %> | </td>
+      <td><%= link_to '修改', edit_bank_card_path(:id=>card.id) %> | </td>
+      <td><%= link_to '删除', card, method: :delete %> | </td>
+    </tr>
+  <% end %>
+  <tr>
+    <td><%= link_to '增加银行卡', new_bank_card_path %></td>
+  </tr>
+</table>
